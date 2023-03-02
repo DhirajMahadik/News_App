@@ -14,7 +14,7 @@ const News = (props) => {
   const UpdateNews = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3f0246dc8d694823a1c31322ea1d7fe3&page=${page}&pageSize=${props.pageSize}`;
     setloading(true)
-    let data = await fetch(url);
+    let data = await fetch("http://api.mediastack.com/v1/news?access_key=57bc8f68b40f532f1847f9be161a6dd1&keywords=tennis&countries=us,gb,de");
     let ParseData = await data.json();
     setarticle(ParseData.articles);
     console.log(ParseData);
