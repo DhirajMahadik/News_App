@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
-import PropTypes from 'prop-types'
+
 
 const News = (props) => {
 
@@ -24,6 +24,7 @@ const News = (props) => {
 
   useEffect(() => {
     UpdateNews()
+    // eslint-disable-next-line
   }, [])
 
 
@@ -64,18 +65,6 @@ const News = (props) => {
     </>
   )
 
-
-  News.defaultProps = {
-    country: "in",
-    pageSize: 6,
-    category: "general"
-  }
-
-  News.propTypes = {
-    country: PropTypes.string,
-    pageSize: PropTypes.number,
-    category: PropTypes.string
-  }
 
 }
 
